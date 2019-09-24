@@ -7,7 +7,9 @@ import java.time.format.DateTimeFormatter;
 public class DailyMessage {
 
     public static void main(String[] args) throws IOException {
-        System.out.println(new DailyMessage().getTodaysMessage());
+        String todaysMessage = new DailyMessage().getTodaysMessage();
+        System.out.println(todaysMessage);
+        new TwilioSMSSender().sendMessage(todaysMessage);
     }
 
     public String getTodaysMessage() throws IOException {
